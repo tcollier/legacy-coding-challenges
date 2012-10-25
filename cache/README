@@ -1,4 +1,4 @@
-== Problem description
+# Problem description
 
 Implement a caching system that has a limited number of slots for the cache. When all of the slots are filled and a new cache is written, the cache that was accessed longest ago will be deleted to make room for the new cache.
 
