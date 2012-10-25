@@ -4,6 +4,6 @@ Implement a caching system that has a limited number of slots for the cache. Whe
 
 Do this in ruby or Node.js, if in ruby, package it into a gem.
 
-Hints
+## Hints
 
   * A doubly linked list is a great data structure here
