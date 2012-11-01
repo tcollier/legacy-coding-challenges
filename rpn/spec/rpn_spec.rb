@@ -35,6 +35,8 @@ describe Rpn do
       it { Rpn.calculate([-1, 'abs']).should == 1 }
 
       it { Rpn.calculate([1, 'abs']).should == 1 }
+
+      it { Rpn.calculate([-1, 'abs', 'abs', 'abs']).should == 1 }
     
       it { Rpn.calculate([1, 2, 3, '+', '-', 'abs']).should == 4 }
 
