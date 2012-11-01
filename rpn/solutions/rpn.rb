@@ -2,7 +2,7 @@ module Rpn
   def self.calculate(args)
     args.inject([]) do |s,o|
       begin
-        s.push Integer(o)
+        s.push Float(o)
       rescue
         a = s.pop
         begin
