@@ -15,31 +15,31 @@ describe Rpn do
       it { Rpn.calculate([12, 3, '/']).should == 4 }
       
     end
+  
+    context "complex" do
+
+      it { Rpn.calculate([1, 2, 3, '+', '+']).should == 6 }
+
+      it { Rpn.calculate([1, 2, '+', 3, '+']).should == 6 }
+
+      it { Rpn.calculate([1, 2, 3, '+', '-']).should == -4 }
+
+      it { Rpn.calculate([1, 2, '+', 3, '-']).should == 0 }
+
+      it { Rpn.calculate([1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', '*', '+', '-', '+', '-', '+', 9, '+', 5, '/', 4, '-', 1, 6, '+', '/', 2, '+']).should == 0 }
+
+    end
+  
+    context "abs" do
+
+      it { Rpn.calculate([-1, 'abs']).should == 1 }
+
+      it { Rpn.calculate([1, 'abs']).should == 1 }
     
-  end
+      it { Rpn.calculate([1, 2, 3, '+', '-', 'abs']).should == 4 }
+
+    end
   
-  context "complex" do
-
-    it { Rpn.calculate([1, 2, 3, '+', '+']).should == 6 }
-
-    it { Rpn.calculate([1, 2, '+', 3, '+']).should == 6 }
-
-    it { Rpn.calculate([1, 2, 3, '+', '-']).should == -4 }
-
-    it { Rpn.calculate([1, 2, '+', 3, '-']).should == 0 }
-
-    it { Rpn.calculate([1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', '*', '+', '-', '+', '-', '+', 9, '+', 5, '/', 4, '-', 1, 6, '+', '/', 2, '+']).should == 0 }
-
   end
-  
-  context "abs" do
 
-    it { Rpn.calculate([-1, 'abs']).should == 1 }
-
-    it { Rpn.calculate([1, 'abs']).should == 1 }
-    
-    it { Rpn.calculate([1, 2, 3, '+', '-', 'abs']).should == 4 }
-
-  end
-  
 end
