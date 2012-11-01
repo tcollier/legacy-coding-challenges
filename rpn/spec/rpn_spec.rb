@@ -43,5 +43,14 @@ describe Rpn do
     end
   
   end
+  
+  context "arbitrary constraints" do
+    
+    it "does not use 'eval'" do
+      Rpn.should_not_receive(:eval)
+      Rpn.calculate([1, 2, '+', 'abs'])
+    end
+    
+  end
 
 end
